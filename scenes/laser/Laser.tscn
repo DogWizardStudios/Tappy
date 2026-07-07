@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://gsjg6ojgmne2"]
+
+[ext_resource type="Texture2D" uid="uid://m78wsxp1xen5" path="res://assets/items/laser2.png" id="1_q5qyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5qyj"]
+size = Vector2(5, 309)
+
+[sub_resource type="Animation" id="Animation_q5qyj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0nfd2"]
+resource_name = "flash"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bnjwl"]
+_data = {
+&"RESET": SubResource("Animation_q5qyj"),
+&"flash": SubResource("Animation_0nfd2")
+}
+
+[node name="Laser" type="Area2D" unique_id=1075655636]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=776009833]
+scale = Vector2(0.7, 8)
+texture = ExtResource("1_q5qyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370383892]
+position = Vector2(51.5, -3.5)
+shape = SubResource("RectangleShape2D_q5qyj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=636105231]
+libraries/ = SubResource("AnimationLibrary_bnjwl")
+autoplay = &"flash"
