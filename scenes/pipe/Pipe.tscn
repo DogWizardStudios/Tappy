@@ -3,16 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://kflo8yao7ph7" path="res://assets/items/bar.png" id="1_5xpr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gddg"]
-size = Vector2(20, 599)
+size = Vector2(20, 660)
 
 [node name="Pipe" type="Area2D" unique_id=1923742880]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=608387371]
 position = Vector2(-18, -2)
-scale = Vector2(1, 1.2)
+scale = Vector2(1, 1.4)
 texture = ExtResource("1_5xpr3")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107491268]
-position = Vector2(0, 299.5)
+position = Vector2(0, 363)
 shape = SubResource("RectangleShape2D_0gddg")

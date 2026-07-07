@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://m78wsxp1xen5" path="res://assets/items/laser2.png" id="1_q5qyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5qyj"]
-size = Vector2(5, 309)
+size = Vector2(2, 439)
 
 [sub_resource type="Animation" id="Animation_q5qyj"]
 length = 0.001
@@ -50,7 +50,7 @@ scale = Vector2(0.7, 8)
 texture = ExtResource("1_q5qyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1370383892]
-position = Vector2(51.5, -3.5)
+position = Vector2(51, -23.5)
 shape = SubResource("RectangleShape2D_q5qyj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=636105231]
