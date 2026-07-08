@@ -24,6 +24,7 @@ position = Vector2(268, 849)
 texture = ExtResource("1_klkup")
 
 [node name="Bounds" type="StaticBody2D" parent="." unique_id=1092109393]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds" unique_id=619458838]
 position = Vector2(240, -12)
