@@ -10,6 +10,9 @@ extends Node
 func _ready() -> void:
 	spawn_pipes()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("TEST"):
+		GameManager.load_main_screen()
 
 
 func _on_spawn_timer_timeout() -> void:

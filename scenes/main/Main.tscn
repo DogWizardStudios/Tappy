@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bk7wx4bliuk8n"]
 
+[ext_resource type="Script" uid="uid://covmbg6dslwqi" path="res://scenes/main/Main.gd" id="1_1rhdn"]
 [ext_resource type="Texture2D" uid="uid://hr7ncocwdu5i" path="res://assets/background/MainScreen.png" id="1_u1xfj"]
 [ext_resource type="LabelSettings" uid="uid://cjfknhlyu5tqm" path="res://resources/title_label_red.tres" id="2_nha0i"]
 [ext_resource type="LabelSettings" uid="uid://d2h8v83b8uy57" path="res://resources/score_label.tres" id="3_gyg6b"]
@@ -51,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1rhdn")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1979447307]
 layout_mode = 1
