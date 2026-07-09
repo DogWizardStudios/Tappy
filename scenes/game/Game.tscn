@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bsxy5jauh8c0r" path="res://assets/background/Parallax0.png" id="1_klkup"]
 [ext_resource type="PackedScene" uid="uid://bu6g247xbjbdx" path="res://scenes/tappy/Tappy.tscn" id="2_m44fu"]
 [ext_resource type="PackedScene" uid="uid://dms402y81minq" path="res://scenes/pipes/Pipes.tscn" id="3_vrspl"]
+[ext_resource type="PackedScene" uid="uid://g8qk13lvajd4" path="res://scenes/game_ui/GameUi.tscn" id="5_lyhax"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7qcb4"]
 normal = Vector2(0, 1)
@@ -19,8 +20,8 @@ z_index = 1
 position = Vector2(47, 257)
 
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=1758665599]
-z_index = 5
-position = Vector2(268, 849)
+z_index = 10
+position = Vector2(261, 939)
 texture = ExtResource("1_klkup")
 
 [node name="Bounds" type="StaticBody2D" parent="." unique_id=1092109393]
@@ -45,5 +46,9 @@ wait_time = 1.2
 autostart = true
 
 [node name="Pipes" type="Node" parent="." unique_id=385564873]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2113835099]
+
+[node name="GameUI" parent="HUD" unique_id=1104638662 instance=ExtResource("5_lyhax")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

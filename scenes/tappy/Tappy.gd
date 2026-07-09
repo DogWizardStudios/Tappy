@@ -34,4 +34,5 @@ func _physics_process(delta: float) -> void:
 		die()
 
 func die() -> void:
+	SignalHub.emit_tappy_died()
 	get_tree().paused = true
