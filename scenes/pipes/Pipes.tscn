@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c565ts6mlrpbr" path="res://scenes/pipes/Pipes.gd" id="1_00ta8"]
 [ext_resource type="PackedScene" uid="uid://gsjg6ojgmne2" path="res://scenes/laser/Laser.tscn" id="1_qxdjt"]
 [ext_resource type="PackedScene" uid="uid://bpdqkw1xnlnay" path="res://scenes/pipe/Pipe.tscn" id="2_00ta8"]
+[ext_resource type="AudioStream" uid="uid://bp821cq4mc67q" path="res://assets/audio/score.wav" id="4_iyf12"]
 
 [node name="Pipes" type="Node2D" unique_id=696681907]
 script = ExtResource("1_00ta8")
@@ -18,6 +19,9 @@ rotation = 3.1415927
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1944194706]
 position = Vector2(97, 0)
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="." unique_id=909610150]
+stream = ExtResource("4_iyf12")
 
 [connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered" flags=6]
 [connection signal="body_entered" from="Upper" to="." method="_on_pipe_body_entered" flags=6]

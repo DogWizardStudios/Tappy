@@ -3,6 +3,7 @@
 [ext_resource type="LabelSettings" uid="uid://d2h8v83b8uy57" path="res://resources/score_label.tres" id="1_32iqx"]
 [ext_resource type="Script" uid="uid://b8htbym817ulf" path="res://scenes/game_ui/GameUi.gd" id="1_uc6v2"]
 [ext_resource type="LabelSettings" uid="uid://cmlk8f4dpsfyx" path="res://resources/jump_prompt_label.tres" id="2_1744l"]
+[ext_resource type="AudioStream" uid="uid://wjnyhwhbyrd" path="res://assets/audio/game_over.wav" id="4_446ek"]
 
 [node name="GameUI" type="Control" unique_id=1104638662]
 process_mode = 3
@@ -41,3 +42,21 @@ text = "GAME OVER"
 label_settings = ExtResource("2_1744l")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GOPressJump" type="Label" parent="MarginContainer" unique_id=1846596461]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PRESS JUMP"
+label_settings = ExtResource("2_1744l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GOMusic" type="AudioStreamPlayer" parent="." unique_id=1659723861]
+stream = ExtResource("4_446ek")
+volume_db = -5.0
+
+[node name="UITimer" type="Timer" parent="." unique_id=856315771]
+wait_time = 1.4
+
+[connection signal="timeout" from="UITimer" to="." method="_on_ui_timer_timeout"]
