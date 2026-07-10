@@ -8,6 +8,7 @@ extends Node
 @onready var pipes_container: Node = $Pipes
 
 func _ready() -> void:
+	ScoreManager.reset_score()
 	spawn_pipes()
 
 func _on_spawn_timer_timeout() -> void:

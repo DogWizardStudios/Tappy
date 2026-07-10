@@ -11,6 +11,7 @@ var change_menu_allowed: bool = false
 func _ready() -> void:
 	SignalHub.tappy_died.connect(game_over)
 	SignalHub.point_scored.connect(on_point_scored)
+	on_point_scored(0)
 	change_menu_allowed = false
 
 func game_over() -> void:
