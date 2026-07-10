@@ -4,11 +4,13 @@ extends Control
 @onready var ui_timer: Timer = $UITimer
 @onready var go_press_jump: Label = $MarginContainer/GOPressJump
 @onready var go_music: AudioStreamPlayer = $GOMusic
+@onready var score_label: Label = $MarginContainer/ScoreLabel
 
 var change_menu_allowed: bool = false
 
 func _ready() -> void:
 	SignalHub.tappy_died.connect(game_over)
+	SignalHub.point_scored.connect(on_point_scored)
 	change_menu_allowed = false
 
 func game_over() -> void:
@@ -28,3 +30,6 @@ func _on_ui_timer_timeout() -> void:
 	go_label.hide()
 	go_press_jump.show()
 	change_menu_allowed = true
+
+func on_point_scored(score: int) -> void:
+	score_label.text = "%03d" % score
