@@ -8,6 +8,7 @@ var _gravity: float = ProjectSettings.get("physics/2d/default_gravity")
 var _jumped: bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var spawn_timer: Timer = $"../SpawnTimer"
 
 
 
@@ -25,8 +26,6 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("fly")
 		_jumped = false
 		
-	
-	
 	
 	move_and_slide()
 	

@@ -429,7 +429,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 0.9, 1.5999999999999999, 1.0]
+"values": [1.0, 0.9, 1.6, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a1x50"]
@@ -462,4 +462,4 @@ libraries/ = SubResource("AnimationLibrary_a1x50")
 stream = ExtResource("3_euwjd")
 volume_db = -5.0
 autoplay = true
-parameters/looping = false
+parameters/looping = true

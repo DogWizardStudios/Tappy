@@ -7,6 +7,8 @@ extends Node
 @onready var lower_spawn: Marker2D = $LowerSpawn
 @onready var pipes_container: Node = $Pipes
 
+
+
 func _ready() -> void:
 	ScoreManager.reset_score()
 	spawn_pipes()
