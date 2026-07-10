@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bnqilomf5vcb8"]
 
 [ext_resource type="Script" uid="uid://d0vnqa38u2bbn" path="res://scenes/game/Game.gd" id="1_7qcb4"]
-[ext_resource type="Texture2D" uid="uid://bsxy5jauh8c0r" path="res://assets/background/Parallax0.png" id="1_klkup"]
 [ext_resource type="PackedScene" uid="uid://bu6g247xbjbdx" path="res://scenes/tappy/Tappy.tscn" id="2_m44fu"]
+[ext_resource type="PackedScene" uid="uid://bteyc1vxdo0tq" path="res://scenes/parallaxbg/ParralaxBg.tscn" id="3_365ku"]
 [ext_resource type="PackedScene" uid="uid://dms402y81minq" path="res://scenes/pipes/Pipes.tscn" id="3_vrspl"]
 [ext_resource type="PackedScene" uid="uid://g8qk13lvajd4" path="res://scenes/game_ui/GameUi.tscn" id="5_lyhax"]
 
@@ -15,14 +15,12 @@ normal = Vector2(0, 1)
 script = ExtResource("1_7qcb4")
 pipes_scene = ExtResource("3_vrspl")
 
+[node name="ParralaxBG" parent="." unique_id=1932492428 instance=ExtResource("3_365ku")]
+position = Vector2(0, 19)
+
 [node name="Tappy" parent="." unique_id=2105558002 instance=ExtResource("2_m44fu")]
 z_index = 1
 position = Vector2(47, 257)
-
-[node name="Parallax0" type="Sprite2D" parent="." unique_id=1758665599]
-z_index = 10
-position = Vector2(261, 939)
-texture = ExtResource("1_klkup")
 
 [node name="Bounds" type="StaticBody2D" parent="." unique_id=1092109393]
 collision_mask = 0
@@ -32,7 +30,7 @@ position = Vector2(240, -12)
 shape = SubResource("WorldBoundaryShape2D_7qcb4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds" unique_id=1761304924]
-position = Vector2(240, 787)
+position = Vector2(240, 706)
 shape = SubResource("WorldBoundaryShape2D_lyhax")
 
 [node name="UpperSpawn" type="Marker2D" parent="." unique_id=1462220790]
